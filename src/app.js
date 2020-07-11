@@ -8,6 +8,7 @@ const forecast = require("../../weather-app/utils/forecast");
 
 const app=express();
 
+const port=process.env.PORT|| 3000;
 
 //Define paths for express config
 const pathForDir=path.join(__dirname,'../public');
@@ -87,8 +88,8 @@ app.get('*',(req,res)=>{
     res.render('page404',{title:"Error",error:'page not found',name:"Sandesh"})
 });
 
-app.listen(3000,()=>{
-console.log("Connected successfully");
+app.listen(port,()=>{
+console.log("Connected successfully",port);
 
 });
 
